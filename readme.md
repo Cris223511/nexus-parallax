@@ -89,7 +89,7 @@ No requiere instalación de dependencias. Las librerías externas se cargan de f
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/nexus-landing.git
+git clone https://github.com/Cris223511/nexus-landing.git
 ```
 
 2. Abrir con un servidor local:
