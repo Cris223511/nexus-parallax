@@ -57,68 +57,6 @@
         await Promise.all(promises);
     }
 
-    class SistemaGotas {
-        constructor(container) {
-            this.container = container;
-            this.drops = [];
-            this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-            this._crearGotas();
-            this._bindEventos();
-            this._animar();
-        }
-        _crearGotas() {
-            for (let i = 0; i < CONFIG.DROPS_COUNT; i++) {
-                const el = document.createElement("div");
-                el.className = "drop";
-                const size = rand(CONFIG.DROP_MIN_SIZE, CONFIG.DROP_MAX_SIZE);
-                el.style.width = size + "px";
-                el.style.height = size + "px";
-                const drop = {
-                    el,
-                    x: rand(0, window.innerWidth),
-                    y: rand(0, window.innerHeight),
-                    targetX: rand(0, window.innerWidth),
-                    targetY: rand(0, window.innerHeight),
-                    vx: rand(-.15, .15),
-                    vy: rand(-.15, .15),
-                    size,
-                    speedFactor: rand(.3, .8),
-                    phase: rand(0, Math.PI * 2),
-                };
-                this.drops.push(drop);
-                this.container.appendChild(el);
-            }
-        }
-        _bindEventos() {
-            document.addEventListener("mousemove", e => {
-                this.mouse.x = e.clientX;
-                this.mouse.y = e.clientY;
-            }, { passive: true });
-        }
-        _animar() {
-            const time = performance.now() * .001;
-            this.drops.forEach(d => {
-                d.x += d.vx + Math.sin(time * .5 + d.phase) * .3;
-                d.y += d.vy + Math.cos(time * .4 + d.phase) * .2;
-                const dx = this.mouse.x - d.x;
-                const dy = this.mouse.y - d.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 400) {
-                    const force = (1 - dist / 400) * .8;
-                    d.x -= dx * force * .005;
-                    d.y -= dy * force * .005;
-                }
-                if (d.x < -d.size) d.x = window.innerWidth + d.size;
-                if (d.x > window.innerWidth + d.size) d.x = -d.size;
-                if (d.y < -d.size) d.y = window.innerHeight + d.size;
-                if (d.y > window.innerHeight + d.size) d.y = -d.size;
-                const scale = 1 + Math.sin(time + d.phase) * .05;
-                d.el.style.transform = `translate3d(${d.x}px,${d.y}px,0) scale(${scale})`;
-            });
-            requestAnimationFrame(() => this._animar());
-        }
-    }
-
     class Escena3D {
         constructor(canvas) {
             this.canvas = canvas;
