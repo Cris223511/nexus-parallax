@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="NEXUS — Estudio de diseño digital. Creamos experiencias digitales que trascienden lo ordinario.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="icon" type="image/x-icon" href="./nexus-logo.ico">
+    <link rel="apple-touch-icon" href="./nexus-logo.ico">
+    <link rel="stylesheet" href="./style.css">
+    <title>NEXUS — Estudio Digital</title>
+</head>
+
+<body>
+
+    <!-- SPINNER -->
+    <div id="spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-text">Cargando Experiencia</div>
+        <div class="spinner-progress">
+            <div class="spinner-progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- CURSOR CUSTOM -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- THREE.JS CANVAS -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- FIGURAS DE FONDO -->
+    <div class="bg-shapes">
+        <div class="bg-shape bg-shape-1"></div>
+        <div class="bg-shape bg-shape-2"></div>
+        <div class="bg-shape bg-shape-3"></div>
+        <div class="bg-shape bg-shape-4"></div>
+    </div>
+
+    <!-- GLASS ORBS -->
+    <div class="glass-orbs" id="glass-orbs">
+        <div class="glass-orb glass-orb-1"></div>
+        <div class="glass-orb glass-orb-2"></div>
+        <div class="glass-orb glass-orb-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">NEXUS<span>®</span></a>
+        <ul class="nav-links">
+            <li><a href="#showcase">Proyectos</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#process">Proceso</a></li>
+            <li><a href="#contact" class="nav-cta">Contacto</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
+            <li><a href="#showcase" data-close>Proyectos</a></li>
+            <li><a href="#services" data-close>Servicios</a></li>
+            <li><a href="#process" data-close>Proceso</a></li>
+            <li><a href="#contact" data-close>Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-label">Estudio de Diseño Digital</div>
+            <h1 class="hero-title">
+                <span class="word">Creamos</span><br>
+                <span class="word">Experiencias</span><br>
+                <span class="word">Digitales</span>
+            </h1>
+            <p class="hero-subtitle">
+                Fusionamos diseño de vanguardia con tecnología de última generación
+                para construir productos digitales que trascienden lo ordinario.
+            </p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-primary">Iniciar Proyecto →</a>
+                <a href="#showcase" class="btn-ghost">Ver Trabajos</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee-track" id="marquee">
+            <div class="marquee-item">Diseño<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Desarrollo<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Estrategia<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Innovación<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Tecnología<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Diseño<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Desarrollo<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Estrategia<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Innovación<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Tecnología<div class="marquee-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOWCASE -->
+    <section class="showcase" id="showcase">
+        <div class="section-header">
+            <div class="section-tag reveal">Portafolio Selecto</div>
+            <h2 class="section-title reveal reveal-delay-1">Proyectos que<br>redefinen estándares</h2>
+        </div>
+        <div class="showcase-grid">
+            <div class="showcase-item glass-panel reveal">
+                <div class="showcase-visual"><canvas id="showcase-canvas-1"></canvas></div>
+                <div class="showcase-label">Plataforma Web — 2025</div>
+                <div class="showcase-item-title">Ecosistema Digital Financiero</div>
+                <div class="showcase-item-desc">Arquitectura modular para la próxima generación de servicios financieros
+                    descentralizados.</div>
+            </div>
+            <div class="showcase-item glass-panel reveal reveal-delay-1">
+                <div class="showcase-visual"><canvas id="showcase-canvas-2"></canvas></div>
+                <div class="showcase-label">App Nativa — 2025</div>
+                <div class="showcase-item-title">Interfaz Inmersiva 3D</div>
+                <div class="showcase-item-desc">Experiencia móvil con renderizado en tiempo real y feedback háptico.
+                </div>
+            </div>
+            <div class="showcase-item glass-panel reveal reveal-delay-2">
+                <div class="showcase-visual"><canvas id="showcase-canvas-3"></canvas></div>
+                <div class="showcase-label">E-Commerce — 2024</div>
+                <div class="showcase-item-title">Motor de Personalización IA</div>
+                <div class="showcase-item-desc">Sistema inteligente de recomendaciones que multiplica la conversión.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div>
+                <div class="section-tag reveal">Lo que Hacemos</div>
+                <h2 class="section-title reveal reveal-delay-1" style="text-align:left;margin-bottom:60px">
+                    Servicios de<br>nivel excepcional
+                </h2>
+                <div class="services-list">
+                    <div class="service-row reveal reveal-delay-1">
+                        <span class="service-number">01</span>
+                        <span class="service-name">Diseño de Producto Digital</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                    <div class="service-row reveal reveal-delay-2">
+                        <span class="service-number">02</span>
+                        <span class="service-name">Desarrollo Full-Stack</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                    <div class="service-row reveal reveal-delay-3">
+                        <span class="service-number">03</span>
+                        <span class="service-name">Estrategia de Marca</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                    <div class="service-row reveal reveal-delay-4">
+                        <span class="service-number">04</span>
+                        <span class="service-name">Arquitectura de Software</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                    <div class="service-row reveal">
+                        <span class="service-number">05</span>
+                        <span class="service-name">Inteligencia Artificial</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                    <div class="service-row reveal reveal-delay-1">
+                        <span class="service-number">06</span>
+                        <span class="service-name">Consultoría Técnica</span>
+                        <span class="service-arrow">↗</span>
+                    </div>
+                </div>
+            </div>
+            <div class="services-visual glass-panel reveal">
+                <canvas id="services-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item glass-panel reveal">
+                <div class="stat-number" data-target="147">0</div>
+                <div class="stat-label">Proyectos Entregados</div>
+            </div>
+            <div class="stat-item glass-panel reveal reveal-delay-1">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Satisfacción Cliente %</div>
+            </div>
+            <div class="stat-item glass-panel reveal reveal-delay-2">
+                <div class="stat-number" data-target="12">0</div>
+                <div class="stat-label">Premios Obtenidos</div>
+            </div>
+            <div class="stat-item glass-panel reveal reveal-delay-3">
+                <div class="stat-number" data-target="36">0</div>
+                <div class="stat-label">Países Alcanzados</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFIESTO -->
+    <section class="manifesto" id="manifesto">
+        <p class="manifesto-text" id="manifesto-text">
+            Cada píxel cuenta una historia. Cada interacción despierta una emoción. Diseñamos
+            con la convicción de que lo digital puede ser tan profundo y significativo como
+            lo tangible. No creamos sitios web — construimos universos digitales que
+            transforman la manera en que las personas experimentan las marcas.
+        </p>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-header">
+                <div class="section-tag reveal">Metodología</div>
+                <h2 class="section-title reveal reveal-delay-1">Nuestro proceso<br>es nuestra ventaja</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step glass-panel reveal">
+                    <div class="process-step-number">01</div>
+                    <div class="process-step-title">Inmersión & Estrategia</div>
+                    <div class="process-step-desc">
+                        Nos sumergimos en tu ecosistema. Entendemos a fondo tu marca, audiencia y objetivos
+                        para diseñar una estrategia digital que impulse resultados reales.
+                    </div>
+                </div>
+                <div class="process-step glass-panel reveal reveal-delay-1">
+                    <div class="process-step-number">02</div>
+                    <div class="process-step-title">Diseño & Prototipado</div>
+                    <div class="process-step-desc">
+                        Iteramos rápidamente con prototipos de alta fidelidad. Cada decisión de diseño está
+                        respaldada por datos y principios de experiencia de usuario.
+                    </div>
+                </div>
+                <div class="process-step glass-panel reveal reveal-delay-2">
+                    <div class="process-step-number">03</div>
+                    <div class="process-step-title">Desarrollo & Lanzamiento</div>
+                    <div class="process-step-desc">
+                        Código limpio, arquitectura escalable y rendimiento excepcional. Entregamos productos
+                        que no solo se ven increíbles sino que funcionan impecablemente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA PARALLAX -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-track" id="gallery-track">
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=600&h=750&fit=crop&q=80"
+                    alt="Diseño abstracto" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Ecosistema Visual</div>
+                </div>
+            </div>
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=750&fit=crop&q=80"
+                    alt="Tecnología futurista" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Plataforma IA</div>
+                </div>
+            </div>
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=750&fit=crop&q=80"
+                    alt="Arte generativo" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Arte Generativo</div>
+                </div>
+            </div>
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=600&h=750&fit=crop&q=80"
+                    alt="Render 3D" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Renders 3D</div>
+                </div>
+            </div>
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=750&fit=crop&q=80"
+                    alt="Neon futurista" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Inmersión Digital</div>
+                </div>
+            </div>
+            <div class="gallery-item glass-panel">
+                <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&h=750&fit=crop&q=80"
+                    alt="Gradientes" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-title">Branding Dinámico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE 2 -->
+    <div class="marquee-section">
+        <div class="marquee-track" style="animation-direction:reverse">
+            <div class="marquee-item">UI/UX<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Branding<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">WebGL<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">React<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Three.js<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Motion<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">UI/UX<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">Branding<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">WebGL<div class="marquee-dot"></div>
+            </div>
+            <div class="marquee-item">React<div class="marquee-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <div class="section-tag reveal">Hablemos</div>
+                    <h2 class="contact-title reveal reveal-delay-1">
+                        ¿Listo para crear<br>algo extraordinario?
+                    </h2>
+                </div>
+                <div class="contact-detail reveal reveal-delay-2">
+                    <div class="contact-detail-label">Correo</div>
+                    <div class="contact-detail-value"><a href="mailto:hola@nexus.studio">hola@nexus.studio</a></div>
+                </div>
+                <div class="contact-detail reveal reveal-delay-3">
+                    <div class="contact-detail-label">Ubicación</div>
+                    <div class="contact-detail-value">Lima, Perú — Global</div>
+                </div>
+                <div class="contact-detail reveal reveal-delay-4">
+                    <div class="contact-detail-label">Redes</div>
+                    <div class="contact-detail-value">
+                        <a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">Dribbble</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal">
+                <div class="form-group">
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center">
+                    Enviar Mensaje →
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-copy">© 2025 NEXUS Studio. Todos los derechos reservados.</div>
+            <ul class="footer-links">
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Créditos</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+<script src="./javascript.js"></script>
+
+</html>
